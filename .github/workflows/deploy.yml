@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Install mdBook
-        uses: peaceiris/action-mdbook@v2
+        uses: peaceiris/actions-mdbook@v2
         with:
           mdbook-version: "latest"
 

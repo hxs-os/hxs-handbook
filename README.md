@@ -1,5 +1,7 @@
 # The HxS Handbook
 
+[![Deploy the HxS Handbook to Cloudflare Workers](https://github.com/juanvel4000/hxs-handbook/actions/workflows/deploy.yml/badge.svg)](https://github.com/juanvel4000/hxs-handbook/actions/workflows/deploy.yml)
+
 A book documenting the configuration, usage, and functionality of the HxS Operating System.
 
 ## Building

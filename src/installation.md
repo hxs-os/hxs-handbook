@@ -405,7 +405,7 @@ Example `/etc/fstab` file:
 ```fstab
 # view fstab(5) from util-linux for further information on the /etc/fstab file
 # fs mp fstype mntops dump pass
-UUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx / ext4 rw,relatime 0 2
+UUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx / ext4 rw,relatime 0 1
 UUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx /boot/efi vfat rw,relatime,utf8 0 2
 UUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx none swap sw 0 0
 # /usr/swap0 none swap sw 0 0
@@ -415,10 +415,16 @@ UUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx none swap sw 0 0
 
 ### 5.1 Installing a Kernel
 
-> [!IMPORTANT]
-> There is no Kernel Package available in any of the main repositories, thus the user is expected to provide their own kernel and configure it.
->
-> This section is considered TODO
+**Programs & Packages**:
+
+- `linux`
+- `xpt(8)` from `xpt`
+
+The `linux` package contains a `7.3.4-hxs` kernel, install it using `xpt(8)`:
+
+```sh
+xpt -in linux
+```
 
 ### 5.2 Installing a Bootloader
 

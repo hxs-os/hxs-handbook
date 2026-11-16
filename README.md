@@ -4,6 +4,8 @@
 
 A book documenting the configuration, usage, and functionality of the HxS Operating System.
 
+> Available in [handbook.hxs.juanvel400.com](https://handbook.hxs.juanvel400.com)
+
 ## Building
 
 Use `mdbook`:
@@ -26,4 +28,4 @@ mdbook serve
 
 [CC-BY-4.0](https://spdx.org/licenses/CC-BY-4.0.html), view [LICENSE](LICENSE)
 
-> Code snippets are also available under [0BSD](https://spdx.org/licenses/0BSD.html).
+> Code snippets are also available under [0BSD](https://spdx.org/licenses/0BSD.html), view [LICENSE-CODE](LICENSE-CODE).

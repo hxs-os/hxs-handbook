@@ -3,3 +3,5 @@ title = "The HxS Handbook"
 authors = ["juanvel400"]
 language = "en"
 src = "src"
+
+[output.html]

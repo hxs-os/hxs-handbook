@@ -12,6 +12,16 @@ Use `mdbook`:
 mdbook build
 ```
 
+## Previewing
+
+To serve the book locally:
+
+```sh
+mdbook serve
+```
+
+> By default, the book is available at [localhost:3000](https://localhost:3000)
+
 ## License
 
 [CC-BY-4.0](https://spdx.org/licenses/CC-BY-4.0.html), view [LICENSE](LICENSE)

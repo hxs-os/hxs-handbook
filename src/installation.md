@@ -1,6 +1,6 @@
 # Installation Guide for HxS 26a3
 
-This guide details how to install HxS 26a3 on an x86_64 EFI machine.
+This guide details how to install HxS 26a3 on an x86_64 UEFI machine.
 
 The Live Installer Image is based on HxS 26a3 GNU, extended with the `efi` subset.
 
@@ -20,7 +20,7 @@ The HxS Live System assumes an active internet connection; currently Wi-Fi is no
 > If your network uses it, execute the DHCP client with `dhcpcd(8)`:
 >
 > ```sh
-> dhcpcd -bw eth0 # look up the appropriate network device with `ip link`
+> dhcpcd eth0 # look up the appropriate network device with `ip link`
 > ```
 
 The `/etc/resolv.conf` file lists DNS servers used to resolve domain names. The following command sets `1.1.1.1` as the default nameserver, with `8.8.8.8` as a fallback:
@@ -76,13 +76,13 @@ Use `cfdisk(8)` to create a partition scheme for the system.
 > [!TIP]
 > The following example serves as a reference partition scheme for most HxS systems
 >
-> | Partition   | Size                                           | Type                   | Filesystem | Mountpoint  |
-> | ----------- | ---------------------------------------------- | ---------------------- | ---------- | ----------- |
-> | `/dev/sda1` | `512M` to `1G`                                 | `EFI System Partition` | `FAT32`    | `/boot/efi` |
-> | `/dev/sda2` | At least `1G`, preferably the rest of the disk | `Linux root (x86_64)`  | `ext4`     | `/`         |
-> | `/dev/sda3` | Usually `2G`                                   | `Linux swap`           | `swap`     | `<none>`    |
+> | Partition   | Size                                          | Type                   | Filesystem | Mountpoint  |
+> | ----------- | --------------------------------------------- | ---------------------- | ---------- | ----------- |
+> | `/dev/sda1` | `512MiB` to `1GiB`                            | `EFI System Partition` | `FAT32`    | `/boot/efi` |
+> | `/dev/sda2` | At least `1GiB`, preferably more than `10GiB` | `Linux root (x86_64)`  | `ext4`     | `/`         |
+> | `/dev/sda3` | Usually `2GiB`                                | `Linux swap`           | `swap`     | `<none>`    |
 >
-> EFI systems usually use `GPT` (GUID Partition Table). Ensure the disk's partition table is set to `GPT`
+> UEFI systems usually use `GPT` (GUID Partition Table). Ensure the disk's partition table is set to `GPT`
 
 > [!WARNING]
 > Utilities such as `mkfs.ext4(8)` or `mkfs.fat(8)` wipe entire partitions. Make sure the partition is safe to erase.
@@ -137,10 +137,10 @@ mkswap /dev/sda3
 
 Alternatively, a file can be created and used as a swap partition without repartitioning the disk.
 
-Allocate `2G` to `/usr/swap0` with `fallocate(1)`, set the permissions to `rw-------` with `chmod(1)` and format it as `swap` with `mkswap(8)`:
+Allocate `2GiB` to `/usr/swap0` with `fallocate(1)`, set the permissions to `rw-------` with `chmod(1)` and format it as `swap` with `mkswap(8)`:
 
 ```sh
-fallocate -l 2G /mnt/usr/swap0
+fallocate -l 2GiB /mnt/usr/swap0
 chmod 600 /mnt/usr/swap0
 mkswap /mnt/usr/swap0
 ```
@@ -165,7 +165,7 @@ This set is experimental, as the projects it depends on are still experimental a
 
 #### 3.1.2 The GNU Set (`gnu`)
 
-This set is built on battle-tested GNU packages, including `coreutils`, the GNU file, text, and shell manipulation utilities, and `bash`, the GNU Bourne-Again Shell.
+This set is built on battle-tested GNU packages, including `coreutils`, the GNU file, text, and shell utilities, and `bash`, the GNU Bourne-Again Shell.
 
 This set is preferred for setups that require stability, compatibility, or prefer a complete, assembled system.
 
@@ -191,7 +191,7 @@ Unlike sets, subsets are designed to expand a base installation by providing pac
 
 #### 3.2.1 `efi`
 
-The `efi` subset includes packages to boot or administer EFI-based systems.
+The `efi` subset includes packages to boot or administer UEFI-based systems.
 
 Packages included by this subset are: `popt`, `efivar`, `efibootmgr`, and `grub-efi`.
 
@@ -250,11 +250,12 @@ ecw /mnt
 - `bash(1)` from `bash`
 - `dash(1)` from `dash`
 - `chsh(1)` from `util-linux`
+- `ln(1)` from the `system:coreutils` provider (`coreutils`, `sbase`, `pxbase`)
 
 > [!NOTE]
 > All sets use the `dash(1)` shell, except for the `gnu` set, which uses `bash(1)`
 
-For compatibility with most scripts, symlink the installed shell to `/bin/sh`:
+For compatibility with most scripts, symlink the installed shell to `/bin/sh` using `ln(1)`:
 
 ```sh
 ln -sf dash /bin/sh # or `ln -sf bash /bin/sh` for the gnu set
@@ -277,17 +278,17 @@ chsh -s /bin/dash root # or /bin/bash
 >
 > The complete version of `xpt` depends on: `libarchive`, `openssl`, `zstd`, `pkgconf`, `zlib`, `xz`, `bzip2`, and `musl`.
 >
-> To install `xpt` in almost any HxS system, Write the main repository to `/etc/xpt.d/index`, then exit the chroot, as outlined in [6. Reboot](installation.md#6-reboot). Then, use the following commands to refresh the Package Database, uninstall `xpt.static`, and install `xpt`:
+> To install `xpt` in almost any HxS system, write the main repository to `/etc/xpt.d/index`, then exit the chroot, as outlined in [6. Reboot](installation.md#6-reboot). Then, use the following commands to refresh the Package Database, uninstall `xpt.static`, and install `xpt`:
 >
 > ```sh
-> xpt -s
+> xpt -d /mnt -s
 > xpt -d /mnt -rp xpt.static
-> xpt -in xpt
+> xpt -d /mnt -in xpt
 > ```
 >
 > Then, return to the chroot using `ecw(8)` as outlined in [4.1 Entering the Base System](installation.md#41-entering-the-base-system)
 
-The newly-installed system does not provide any repositories, nor does it have a configured `xpt(8)`.
+The newly installed system does not provide any repositories, nor does it have a configured `xpt(8)`.
 
 Similarly to [1.2 XPT](installation.md#12-xpt), write the `26a3` main repository in `/etc/xpt.d/index`:
 
@@ -363,7 +364,7 @@ vim /etc/inittab
 > xpt -in vim
 > ```
 
-### 4.6 The System Hostname & Networking
+### 4.6 System Networking
 
 **Programs & Packages**
 
@@ -382,7 +383,7 @@ echo "hxs" >/etc/hostname
 > To execute the DHCP client (`dhcpcd(8)`) on boot, append the following line to `inittab`
 >
 > ```inittab
-> dhcp:2345:respawn:/sbin/dhcpcd -Bw
+> dhcp:2345:respawn:/sbin/dhcpcd -B
 > ```
 
 ### 4.7 The Filesystem Table
@@ -405,7 +406,7 @@ Example `/etc/fstab` file:
 # view fstab(5) from util-linux for further information on the /etc/fstab file
 # fs mp fstype mntops dump pass
 UUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx / ext4 rw,relatime 0 2
-UUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx /boot/efi vfat rw,relatime,utf8,errors=remount-ro 0 2
+UUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx /boot/efi vfat rw,relatime,utf8 0 2
 UUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx none swap sw 0 0
 # /usr/swap0 none swap sw 0 0
 ```
@@ -456,6 +457,12 @@ exit
 ```
 
 > Alternatively, use the `Ctrl-D` shortcut to send an `EOF` signal to the shell, thus closing it.
+
+If swap was configured and enabled in [2.1 The Swap Partition](installation.md#21-the-swap-partition.md), disable it using `swapoff(8)`:
+
+```sh
+swapoff /dev/sda3 # or /mnt/usr/swap0
+```
 
 Unmount the filesystem recursively using `umount(8)`:
 

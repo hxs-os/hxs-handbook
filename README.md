@@ -1,5 +1,7 @@
 # The HxS Handbook
 
+A book documenting the configuration, usage, and functionality of the HxS Operating System.
+
 ## Building
 
 Use `mdbook`:

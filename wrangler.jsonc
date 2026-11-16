@@ -1,0 +1,7 @@
+{
+  "name": "hxs-handbook",
+  "compatibility-date": "2026-11-16",
+  "assets": {
+    "directory": "./book",
+  },
+}

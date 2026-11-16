@@ -13,3 +13,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - add a basic introduction
 - add a basic installation guide
 - add a basic PackageTracker chapter
+- add a basic wrangler deploy workflow

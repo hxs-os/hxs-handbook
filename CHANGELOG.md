@@ -16,3 +16,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - add a basic wrangler deploy workflow
 - add a basic post-install chapter
 - add a basic getting HxS chapter
+- add a basic system recovery chapter

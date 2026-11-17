@@ -2,11 +2,41 @@
 
 This is the HxS Handbook for the 26a3 release of the HxS Operating System, documenting its functionality, configuration, and usage.
 
-For users wanting to obtain the HxS system, refer to [Getting HxS](./getting-hxs.md).
+## 1. What is HxS?
 
-For users wanting to install an HxS system in an x86_64 UEFI machine, refer to [Installation Guide](./installation.md).
+HxS is a `musl`-based Linux distribution for x86_64 UEFI machines, built around its own collection of first-class packages, while additionally providing GNU and [suckless](https://suckless.org) packages for compatibility and reliability.
 
-## License
+HxS is designed as a composable system via its [Set/Flavor System](./installation.md#31-choosing-a-set), which lets you compose the system from sets and subsets.
+
+## 2. Philosophy
+
+HxS emphasizes a philosophy built around correctness, minimalism, and simplicity.
+
+The HxS philosophy is loosely inspired by suckless and traditional UNIX design.
+
+## 3. First Steps
+
+For most users, install HxS using the [Installation Guide](./installation.md), which outlines how to install HxS 26a3 in most x86_64 UEFI machines.
+
+The [Getting HxS](./getting-hxs.md) chapter describes various methods of obtaining a built HxS system, such as container images.
+
+## 4. Release Model
+
+HxS uses a rather unconventional release model loosely inspired by [Debian GNU/Linux](https://debian.org) and [Arch Linux](https://archlinux.org).
+
+The `living` (`latest`) channel provides the latest versions of the HxS packages, following upstream closely. It is used to test and experiment with package releases, and is prone to breaking. Packages are not backported with security fixes; you get what upstream ships.
+
+`living` is analogous to the Arch Linux Release Model, since both are bleeding-edge.
+
+The `stable` channel is designed to follow the latest frozen release of HxS. This channel is far less prone to breaking, but not immune.
+
+`stable` is loosely analogous to the Debian `stable` branch.
+
+Previous versions of HxS are pinned. They may receive security updates and do not receive updated packages.
+
+> View [Post-Install Recommendations / 3. The HxS Binary Repositories](./post-install.md#3-the-hxs-binary-repositories) for the respective repositories.
+
+## 5. License
 
 Copyright (c) 2026 juanvel400.
 

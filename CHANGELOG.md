@@ -18,3 +18,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - add a basic getting HxS chapter
 - add a basic system recovery chapter
 - add a basic xpt chapter
+- add a basic logo

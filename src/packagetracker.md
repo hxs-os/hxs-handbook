@@ -4,7 +4,7 @@
 
 - `ebs(5)` and `ebs(1)` from `xpt`
 
-The HxS PackageTracker is a growing tree of over 120 `ebs(5)` formula, describing how to build packages using the `ebs(1)` build system.
+The HxS PackageTracker is a growing tree of `ebs(5)` formulae, describing how to build binary packages using the `ebs(1)` build system.
 
 PackageTracker is inspired by [`void-packages`](https://github.com/void-linux/void-packages), [the FreeBSD ports tree](https://github.com/freebsd/freebsd-ports), and, loosely, the [Arch User Repository](https://aur.archlinux.org),
 

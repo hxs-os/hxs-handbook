@@ -4,17 +4,17 @@
 
 The following HxS containers are available through the `ghcr.io` registry
 
-- `juanvel4000/hxs.standard:26a3`: HxS 26a3 with the `standard` flavor
-- `juanvel4000/hxs.gnu:26a3`: HxS 26a3 with the `gnu` flavor
-- `juanvel4000/hxs.suckless:26a3`: HxS 26a3 with the `suckless` flavor
-- `juanvel4000/hxs.minimal:26a3`: HxS 26a3 with the `minimal` flavor
-- `juanvel4000/hxs.suckless-minimal:26a3`: HxS 26a3 with the `suckless-minimal` flavor
+- `hxs-os/hxs.standard:26a3`: HxS 26a3 with the `standard` flavor
+- `hxs-os/hxs.gnu:26a3`: HxS 26a3 with the `gnu` flavor
+- `hxs-os/hxs.suckless:26a3`: HxS 26a3 with the `suckless` flavor
+- `hxs-os/hxs.minimal:26a3`: HxS 26a3 with the `minimal` flavor
+- `hxs-os/hxs.suckless-minimal:26a3`: HxS 26a3 with the `suckless-minimal` flavor
 
 e.g. with `podman(1)`:
 
 ```sh
-podman pull ghcr.io/juanvel4000/hxs.standard:26a3
-podman run --rm -it ghcr.io/juanvel4000/hxs.standard:26a3
+podman pull ghcr.io/hxs-os/hxs.standard:26a3
+podman run --rm -it ghcr.io/hxs-os/hxs.standard:26a3
 ```
 
 ## 2. Using `hxsbootstrap(1)`

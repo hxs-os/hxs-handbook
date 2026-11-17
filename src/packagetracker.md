@@ -23,7 +23,7 @@ PackageTracker is inspired by [`void-packages`](https://github.com/void-linux/vo
 As `root`, use `git(1)` to clone the PackageTracker tree into `/usr/tracker`:
 
 ```sh
-git clone https://github.com/juanvel4000/HxS-PackageTracker.git /usr/tracker
+git clone https://github.com/hxs-os/HxS-PackageTracker.git /usr/tracker
 ```
 
 ## 2. Working with PackageTracker

@@ -22,7 +22,7 @@ To serve the book locally:
 mdbook serve
 ```
 
-> By default, the book is available at [localhost:3000](https://localhost:3000)
+> By default, the book is available at [localhost:3000](http://localhost:3000)
 
 ## License
 

@@ -8,7 +8,7 @@
 
 Configure the system timezone by linking the appropriate timezone file to `/etc/localtime`
 
-To view the available timezones, use `ls(1)` on `/usr/share/zoneinfo
+To view the available timezones, use `ls(1)` on `/usr/share/zoneinfo`
 
 ```sh
 ls /usr/share/zoneinfo
@@ -68,7 +68,7 @@ HxS provides several official binary package repositories:
 The last frozen HxS release is `26a2`, whereas the current ("living") HxS release is `26a3`.
 
 > [!NOTE]
-> The [Installation Guide](./installation.md) sets `https://main.hxs.juanvel400.com/x86_64` as the main `xpt` repository, however, certain setups may benefit from using a pinned release such as `https://main.hxs.juanvel400.com/archive/26a3/x86_64`.
+> The [Installation Guide](./installation.md) sets `https://main.hxs.juanvel400.com/archive/26a3/x86_64` as the main `xpt` repository, however, certain setups may benefit from being in the bleeding-edge with `https://main.hxs.juanvel400.com/x86_64`.
 
 ## 4. The HxS Build System
 

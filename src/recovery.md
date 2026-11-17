@@ -65,7 +65,7 @@ ln -sf usr/sbin/adam ./rootfs.recovery/init
 - `gzip(1)` from `gzip`
 - `find(1)` from `findutils`
 
-Since there is no root disk to mount, the kernel will load an archive named `initramfs`, this archive contains the root filesystem previously built in [1.1 Bootstrapping HxS](recovery.md.md#11-bootstrapping-hxs), which the kernel will unpack into memory and use as root.
+Since there is no root disk to mount, the kernel will load an archive named `initramfs`, this archive contains the root filesystem previously built in [1.1 Bootstrapping HxS](recovery.md#11-bootstrapping-hxs), which the kernel will unpack into memory and use as root.
 
 Use `find(1)` to list all files in the root filesystem, piped to `cpio(1)`, which will create a `newc` archive, piped to `gzip(1)`, which will compress the final archive:
 
@@ -81,8 +81,10 @@ find . -print0 | \
 > [!NOTE]
 > Ensure the kernel has enabled the following features during build time
 >
-> `CONFIG_BLK_DEV_INITRD=y`: Support `initramfs` images
-> `CONFIG_RD_GZIP=y`: Support for `gzip`-compressed initramfs images (`.gz`)
+> - `CONFIG_BLK_DEV_INITRD=y`: Support `initramfs` images
+> - `CONFIG_RD_GZIP=y`: Support for `gzip`-compressed initramfs images (`.gz`)
+>
+> By default, kernels built using the default config (e.g. the `linux` kernel package), have these options enabled.
 
 ### 1.4 Creating an ISO using `grub-mkrescue(1)`
 

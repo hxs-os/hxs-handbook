@@ -269,7 +269,7 @@ chsh -s /bin/dash root # or /bin/bash
 
 ### 4.3 The Package Manager
 
-**Programs & Packages**
+**Programs & Packages**:
 
 - `xpt(8)` from `xpt`
 
@@ -304,7 +304,7 @@ xpt -s
 
 ### 4.4 Users
 
-**Programs & Packages**
+**Programs & Packages**:
 
 - `passwd(8)` and `useradd(8)` from `shadow`
 
@@ -366,7 +366,7 @@ vim /etc/inittab
 
 ### 4.6 System Networking
 
-**Programs & Packages**
+**Programs & Packages**:
 
 - `adam(8)` from `adam`
 - `dhcpcd(8)` from `dhcpcd`
@@ -464,7 +464,7 @@ exit
 
 > Alternatively, use the `Ctrl-D` shortcut to send an `EOF` signal to the shell, thus closing it.
 
-If swap was configured and enabled in [2.1 The Swap Partition](installation.md#21-the-swap-partition.md), disable it using `swapoff(8)`:
+If swap was configured and enabled in [2.1 The Swap Partition](installation.md#21-the-swap-partition), disable it using `swapoff(8)`:
 
 ```sh
 swapoff /dev/sda3 # or /mnt/usr/swap0

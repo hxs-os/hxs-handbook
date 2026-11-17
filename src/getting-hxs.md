@@ -1,4 +1,4 @@
-# Where to get HxS
+# Getting HxS
 
 ## 1. OCI Container Images
 
@@ -19,7 +19,7 @@ podman run --rm -it ghcr.io/juanvel4000/hxs.standard:26a3
 
 ## 2. Using `hxsbootstrap(1)`
 
-**Programs & Utilities**:
+**Programs & Packages**:
 
 - `hxsbootstrap(1)` from `hxsbootstrap`
 

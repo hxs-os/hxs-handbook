@@ -97,8 +97,6 @@ Install a network package using the following flags:
 xpt -in hello
 ```
 
-`xpt(8)` resolves the dependency graph and packages and installs
-
 ### 2.4 Querying a Network Package
 
 Unlike `-Qp`, `-Qn` only shows the package name, version, and architecture.

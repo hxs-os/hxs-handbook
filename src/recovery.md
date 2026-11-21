@@ -38,7 +38,7 @@ Link `bash(1)` to `sh(1)` using `ln(1)`:
 ln -sf bash ./rootfs.recovery/bin/sh
 ```
 
-### 1.2 Configurate `/etc/inittab` and `adam(8)`
+### 1.2 Configure `/etc/inittab` and `adam(8)`
 
 **Programs & Packages**:
 
@@ -73,7 +73,7 @@ Use `find(1)` to list all files in the root filesystem, piped to `cpio(1)`, whic
 (
 cd ./rootfs.recovery
 find . -print0 | \
-    cpio -0 -o -newc |
+    cpio -0 -o -H newc |
     gzip > ../initramfs.cpio.gz
 )
 ```
@@ -102,7 +102,7 @@ mkdir -p ./iso.recovery/boot/grub
 Copy the host's kernel to the ISO workspace using `cp(1)`:
 
 ```sh
-cp /boot/vmlinuz-linux ./iso.recovery/boot/vmlinuz-linux
+cp /boot/vmlinuz-linux-7.3.4-hxs ./iso.recovery/boot/vmlinuz-linux
 ```
 
 Copy the built `initramfs.cpio.gz` to the ISO workspace:

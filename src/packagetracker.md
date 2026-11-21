@@ -6,10 +6,12 @@
 
 The HxS PackageTracker is a growing tree of `ebs(5)` formulae, describing how to build binary packages using the `ebs(1)` build system.
 
-PackageTracker is inspired by [`void-packages`](https://github.com/void-linux/void-packages), [the FreeBSD ports tree](https://github.com/freebsd/freebsd-ports), and, loosely, the [Arch User Repository](https://aur.archlinux.org),
+PackageTracker is inspired by [`void-packages`](https://github.com/void-linux/void-packages), [the FreeBSD ports tree](https://github.com/freebsd/freebsd-ports), and, loosely, the [Arch User Repository](https://aur.archlinux.org).
 
 > [!IMPORTANT]
 > Most formulae assume the presence of a native compilation toolchain, which is not included in the binary repositories, the user is expected to bootstrap their own, using the `x86_64-hxs-linux-musl` triple.
+
+> The PackageTracker Git Repository is available in GitHub as [hxs-os/hxs-packagetracker](https://github.com/hxs-os/hxs-packagetracker)
 
 ## 1. Getting the PackageTracker Tree
 

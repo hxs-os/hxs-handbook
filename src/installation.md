@@ -276,7 +276,7 @@ chsh -s /bin/dash root # or /bin/bash
 > [!IMPORTANT]
 > Minimal sets ship with a static version of the `xpt` package, this is a trimmed-down version of `xpt` that lacks the networking subsystem entirely. Minimal sets can skip this section.
 >
-> The complete version of `xpt` depends on: `libarchive`, `openssl`, `zstd`, `pkgconf`, `zlib`, `xz`, `bzip2`, and `musl`.
+> The complete version of `xpt` depends on: `libarchive`, `openssl`, `zstd`, `pkgconf`, `zlib`, `xz`, `bzip2`, `sqlite3`, and `musl`.
 >
 > To install `xpt` in almost any HxS system, write the main repository to `/etc/xpt.d/index`, then exit the chroot, as outlined in [6. Reboot](installation.md#6-reboot). Then, use the following commands to refresh the Package Database, uninstall `xpt.static`, and install `xpt`:
 >
@@ -453,7 +453,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 - `ecw(8)` from `xpt`
 - `reboot(8)` from `adam`
-- `umount(8)` from `util-linux`
+- `swapoff(8)`, and `umount(8)` from `util-linux`
 
 Exit `ecw(8)` by closing the interactive shell:
 

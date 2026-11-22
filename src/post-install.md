@@ -1,26 +1,6 @@
 # Post-Install Recommendations
 
-## 1. Setting the Timezone
-
-**Programs & Packages**:
-
-- `tzdata`
-
-Configure the system timezone by linking the appropriate timezone file to `/etc/localtime`
-
-To view the available timezones, use `ls(1)` on `/usr/share/zoneinfo`
-
-```sh
-ls /usr/share/zoneinfo
-```
-
-e.g. To set `UTC` as the system timezone using `ln(1)`:
-
-```sh
-ln -sf /usr/share/zoneinfo/UTC /etc/localtime
-```
-
-## 2. Using `doas(1)`
+## 1. Using `doas(1)`
 
 **Programs & Packages**:
 
@@ -56,7 +36,7 @@ chmod 0400 /etc/doas.conf
 
 > `doas.conf(5)` provides a more detailed explanation of the `/etc/doas.conf` file
 
-## 3. The HxS Binary Repositories
+## 2. The HxS Binary Repositories
 
 HxS provides several official binary package repositories:
 
@@ -70,7 +50,7 @@ The last frozen HxS release is `26a2`, whereas the current ("living") HxS releas
 > [!NOTE]
 > The [Installation Guide](./installation.md) sets `https://main.hxs.juanvel400.com/archive/26a3/x86_64` as the main `xpt` repository, however, certain setups may benefit from being in the bleeding-edge with `https://main.hxs.juanvel400.com/x86_64`.
 
-## 4. The HxS Build System
+## 3. The HxS Build System
 
 The HxS Build System allows users to compile packages from source without the overhead of manually unpacking source, setting configuration options and clashing with the package manager.
 

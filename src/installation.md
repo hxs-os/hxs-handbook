@@ -10,25 +10,21 @@ The Live Installer Image is based on HxS 26a3 GNU, extended with the `efi` subse
 
 **Programs & Packages**:
 
-- `dhcpcd(8)` from `dhcpcd`
 - `ip(8)` from `iproute2`
 - `ping(1)` from `inetutils`
+- `dhcpcd(8)` from `dhcpcd`
 
 The HxS Live System assumes an active internet connection; currently Wi-Fi is not supported.
 
 > [!TIP]
-> If your network uses it, execute the DHCP client with `dhcpcd(8)`:
+> The live system automatically runs a `dhcpcd(8)` instance, if your network does not use DHCP, `/etc/resolv.conf` must be created manually.
+>
+> The `/etc/resolv.conf` file lists DNS servers used to resolve domain names. The following command sets `1.1.1.1` as the default nameserver, with `8.8.8.8` as a fallback:
 >
 > ```sh
-> dhcpcd eth0 # look up the appropriate network device with `ip link`
+> echo "nameserver 1.1.1.1" >/etc/resolv.conf
+> echo "nameserver 8.8.8.8" >>/etc/resolv.conf
 > ```
-
-The `/etc/resolv.conf` file lists DNS servers used to resolve domain names. The following command sets `1.1.1.1` as the default nameserver, with `8.8.8.8` as a fallback:
-
-```sh
-echo "nameserver 1.1.1.1" >/etc/resolv.conf
-echo "nameserver 8.8.8.8" >>/etc/resolv.conf
-```
 
 Finally, use `ping(1)` to test the network connection.
 
@@ -41,12 +37,6 @@ ping -c 3 main.hxs.juanvel400.com
 **Programs & Packages**:
 
 - `xpt(8)` from `xpt`
-
-The Live System does not provide any `xpt(8)` repositories in `/etc/xpt.d/index`. Write the `26a3` main repository (`https://main.hxs.juanvel400.com/archive/26a3/x86_64`) to it:
-
-```sh
-echo "https://main.hxs.juanvel400.com/archive/26a3/x86_64" >/etc/xpt.d/index
-```
 
 Synchronize the `xpt(8)` package database:
 
@@ -409,6 +399,35 @@ UUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx / ext4 rw,relatime 0 1
 UUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx /boot/efi vfat rw,relatime,utf8 0 2
 UUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx none swap sw 0 0
 # /usr/swap0 none swap sw 0 0
+```
+
+### 4.8 Timezone And The Hardware Clock
+
+**Programs & Packages**:
+
+- `ln(1)` and `ls(1)` from the `system:coreutils` provider (`coreutils`, `sbase`, `pxbase`)
+- `hwclock(8)` from `util-linux`
+
+Configure the system timezone by linking the appropriate timezone file to `/etc/localtime`
+
+To view the available timezones, use `ls(1)` on `/usr/share/zoneinfo`:
+
+```sh
+ls /usr/share/zoneinfo
+```
+
+Use `ln(1)` to link the timezone file to `/etc/localtime`.
+
+e.g. To set `UTC` as the system timezone using `ln(1)`:
+
+```sh
+ln -sf /usr/share/zoneinfo/UTC /etc/localtime
+```
+
+Use `hwclock(8)` to generate `/etc/adjtime`:
+
+```sh
+hwclock -w
 ```
 
 ## 5. Making the System Bootable

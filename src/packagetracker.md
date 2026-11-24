@@ -25,7 +25,7 @@ PackageTracker is inspired by [`void-packages`](https://github.com/void-linux/vo
 As `root`, use `git(1)` to clone the PackageTracker tree into `/usr/tracker`:
 
 ```sh
-git clone https://github.com/hxs-os/HxS-PackageTracker.git /usr/tracker
+git clone https://github.com/hxs-os/hxs-packagetracker.git /usr/tracker
 ```
 
 ## 2. Working with PackageTracker
@@ -98,4 +98,25 @@ xpt -if hello-0.1.3.xpt
 
 - `ebs(5)` from `xpt`
 
-View the `ebs(5)` manual page and use `/usr/share/xpt/examples/ebs.formula` as a reference for building `ebs(5)` formula.
+View the `ebs(5)` manual page and use `/usr/share/xpt/examples/ebs.formula` as a reference when writing `ebs(5)` formulae.
+
+## 4. Persistent Builds
+
+**Programs & Packages**:
+
+- `ebs(1)` from `xpt`
+
+Certain builds, such as kernels, might benefit from persistence or incremental builds.
+
+```sh
+# force downloads even when resuming a build
+export EBS_FORCE_DOWNLOAD=true
+
+# preserve the build directory
+export EBS_RESUME=/usr/src/<package>-<version>
+
+# skip cleanup
+export EBS_SKIP_CLEANUP=true
+
+ebs build /usr/tracker/<name>/<name>-<version>.ebs
+```

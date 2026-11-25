@@ -375,6 +375,9 @@ echo "hxs" >/etc/hostname
 > ```inittab
 > dhcp:2345:respawn:/sbin/dhcpcd -B
 > ```
+>
+> > [!WARNING]
+> > It is prefferred to use `openrc` to handle `dhcpcd(8)` execution, as outlined in [System Initialization & Service Management # 2.2.1 Enabling Services](./init-and-services.md#221-enabling-services).
 
 ### 4.7 The Filesystem Table
 

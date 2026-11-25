@@ -7,4 +7,5 @@
 - [Package Management](./xpt.md)
 - [PackageTracker](./packagetracker.md)
 - [Using Wayland](./wayland.md)
+- [System Initialization & Service Management](./init-and-services.md)
 - [System Recovery](./recovery.md)

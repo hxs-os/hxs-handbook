@@ -19,3 +19,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - add a basic system recovery chapter
 - add a basic xpt chapter
 - add a basic logo
+- add a basic wayland chapter

@@ -6,4 +6,5 @@
 - [Post-Install Recommendations](./post-install.md)
 - [Package Management](./xpt.md)
 - [PackageTracker](./packagetracker.md)
+- [Using Wayland](./wayland.md)
 - [System Recovery](./recovery.md)

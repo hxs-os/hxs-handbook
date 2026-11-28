@@ -13,7 +13,7 @@
 - `pixman`
 
 > [!NOTE]
-> HxS deliberately excludes Mesa from its base repositories. While Mesa provides extensive graphics compatibility and hardware acceleration, its massive size and dependency footprint conflicts with HxS's unbeefy computers.
+> HxS deliberately excludes Mesa from its base repositories. While Mesa provides extensive graphics compatibility and hardware acceleration, its massive size and dependency footprint conflicts with HxS's focus on low-end hardware.
 
 The `pixman` package provides a CPU-based pixel manipulation and compositing library. It can be used as a software rendering backend by compatible Wayland compositors, install with `xpt(8)`:
 

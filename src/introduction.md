@@ -16,7 +16,7 @@ The HxS philosophy is loosely inspired by suckless and traditional UNIX design.
 
 ## 3. First Steps
 
-For most users, install HxS using the [Installation Guide](./installation.md), which outlines how to install HxS 26a3 in most x86_64 UEFI machines.
+For most users, install HxS using the [Installation Guide](./installation.md), which outlines how to install HxS in most x86_64 UEFI machines.
 
 The [Getting HxS](./getting-hxs.md) chapter describes various methods of obtaining a built HxS system, such as container images.
 
@@ -38,7 +38,7 @@ Previous versions of HxS are pinned. They may receive security updates and do no
 
 ## 5. License
 
-Copyright (c) 2026 juanvel400.
+Copyright (c) 2026 juanvel400 [<me@juanvel400.com>](mailto:me@juanvel400.com).
 
 Licensed under [CC-BY-4.0](https://spdx.org/licenses/CC-BY-4.0.html).
 

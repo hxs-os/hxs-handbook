@@ -10,3 +10,4 @@
 - [Using Wayland](./wayland.md)
 - [System Initialization & Service Management](./init-and-services.md)
 - [System Recovery](./recovery.md)
+- [HxS Compared to other Operating Systems](./comparison.md)

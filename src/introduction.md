@@ -8,6 +8,8 @@ HxS is a `musl`-based Linux distribution for x86_64 UEFI machines, built around 
 
 HxS is designed as a composable system via its [Set System](./installation.md#31-choosing-a-set), which lets you compose the system from sets and subsets.
 
+The [HxS Compared to Other Operating Systems](./comparison.md) chapter compares HxS with other popular operating systems.
+
 ## 2. Philosophy
 
 HxS emphasizes a philosophy built around correctness, minimalism, and simplicity.
@@ -43,3 +45,26 @@ Copyright (c) 2026 juanvel400 [<me@juanvel400.com>](mailto:me@juanvel400.com).
 Licensed under [CC-BY-4.0](https://spdx.org/licenses/CC-BY-4.0.html).
 
 > Code snippets authored for this handbook are also available under [0BSD](https://spdx.org/licenses/0BSD.html).
+
+```
+welcome to HxS 26a3 'Roses'
+mounting /dev
+mounting /proc
+mounting /sys
+mounting /run
+mounting /tmp
+mounting /dev/pts
+mounting /dev/shm
+runlevel: 4
+
+HxS 26a3 (x86_64)
+hxs login: root
+Password:
+ _   _       ____    ____   __         _____
+| | | |_  __/ ___|  |___ \ / /_   __ _|___ /
+| |_| \ \/ /\___ \    __) | '_ \ / _` | |_ \
+|  _  |>  <  ___) |  / __/| (_) | (_| |___) |
+|_| |_/_/\_\|____/  |_____|\___/ \__,_|____/
+No mail.
+root@hxs:~#
+```

@@ -523,4 +523,4 @@ Some users may benefit from the [Post-Install Recommendations](./post-install.md
 
 You may want to familiarize yourself with [the HxS PackageTracker](./packagetracker.md) or the system's [Initialization & Service Management](./init-and-services.md).
 
-Aditionally, the [Wayland](./wayland.md) chapter outlines how to setup a mildly complete graphical environment in an HxS system.
+Adittionally, the [Wayland](./wayland.md) chapter outlines how to setup a mildly complete graphical environment in an HxS system.

@@ -21,3 +21,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - add a basic logo
 - add a basic wayland chapter
 - add a basic init chapter
+- add a basic version chapter

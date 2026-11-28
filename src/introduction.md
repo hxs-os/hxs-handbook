@@ -1,6 +1,6 @@
 # Introduction
 
-This is the HxS Handbook for the 26a3 release of the HxS Operating System, documenting its functionality, configuration, and usage.
+This is the HxS Handbook, documenting the HxS Operating System's functionality, configuration, and usage.
 
 ## 1. What is HxS?
 

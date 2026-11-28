@@ -1,6 +1,7 @@
 # Summary
 
 - [Introduction](./introduction.md)
+- [HxS Version](./version.md)
 - [Getting HxS](./getting-hxs.md)
 - [Installation Guide](./installation.md)
 - [Post-Install Recommendations](./post-install.md)

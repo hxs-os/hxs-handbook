@@ -1,8 +1,8 @@
-# Installation Guide for HxS 26a3
+# Installation Guide
 
-This guide details how to install HxS 26a3 on an x86_64 UEFI machine.
+This guide details how to install HxS on an x86_64 UEFI machine.
 
-The Live Installer Image is based on HxS 26a3 GNU, extended with the `efi` subset.
+The Live Installer Image is based on HxS GNU, extended with the `efi` subset.
 
 ## 1. Configure the Live System
 

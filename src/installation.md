@@ -338,6 +338,10 @@ Copy `/usr/share/adam/examples/inittab` to `/etc/inittab` using `cp(1)`:
 cp /usr/share/adam/examples/inittab /etc/inittab
 ```
 
+> [!TIP]
+>
+> [System Initialization & Service Management # 1.1 The Init Table](./init-and-services.md#11-the-init-table) presents a more correct reference `/etc/inittab` for most HxS systems.
+
 Use the editor provided by the system to modify `/etc/inittab`:
 
 ```sh
@@ -377,7 +381,7 @@ echo "hxs" >/etc/hostname
 > ```
 >
 > > [!WARNING]
-> > It is prefferred to use `openrc` to handle `dhcpcd(8)` execution, as outlined in [System Initialization & Service Management # 2.2.1 Enabling Services](./init-and-services.md#221-enabling-services).
+> > It is preferred to use `openrc` to handle `dhcpcd(8)` execution, as outlined in [System Initialization & Service Management # 2.2.1 Enabling Services](./init-and-services.md#221-enabling--disabling-services).
 
 ### 4.7 The Filesystem Table
 
@@ -512,3 +516,11 @@ hxs login:
 ```
 
 Type the username, and then the password, of the user created in [4.4 Users](installation.md#44-users). Alternatively, log in as `root`.
+
+## 7. After Install
+
+Some users may benefit from the [Post-Install Recommendations](./post-install.md) chapter, which outlines potential next steps for most HxS systems.
+
+You may want to familiarize yourself with [the HxS PackageTracker](./packagetracker.md) or the system's [Initialization & Service Management](./init-and-services.md).
+
+Aditionally, the [Wayland](./wayland.md) chapter outlines how to setup a mildly complete graphical environment in an HxS system.

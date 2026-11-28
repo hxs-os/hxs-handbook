@@ -6,9 +6,9 @@
 
 - `adam(8)` from `adam`
 
-The `adam` program is a `sysvinit`-style init system designed solely to initialize the system, execute processes and supervise them.
+The `adam` package provides a `sysvinit`-style init system designed solely to initialize the system, execute processes and supervise them.
 
-The `adam` package is included in most sets as `adam` or `adam.static`, except in the `suckless` sets, where it is replaced by `sinit`.
+`adam` is included in most sets as `adam` or `adam.static`, except in the `suckless` sets, where it is replaced by `sinit`.
 
 ### 1.1 The Init Table
 
